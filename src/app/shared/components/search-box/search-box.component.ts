@@ -17,13 +17,13 @@ export class SearchBoxComponent {
   public txtInput!: ElementRef<HTMLInputElement>;
 
   @Output() 
-  onValue = new EventEmitter();
+  public onValue = new EventEmitter();
 
   @Input()
   placeholder: string = '';
 
-  onWrite() {
-    const termino = this.txtInput.nativeElement.value;
+  onWrite(termino: string) {
+    // const termino = this.txtInput.nativeElement.value;
     this.onValue.emit(termino);
   }
 }
